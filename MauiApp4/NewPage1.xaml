@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4.NewPage1"
+             Title="NewPage1">
+    <VerticalStackLayout>
+        <VerticalStackLayout RadioButtonGroup.GroupName="rozmiarPizzy" 
+                             RadioButtonGroup.SelectedValue="{Binding selectedPizza, Mode=TwoWay}">
+            <RadioButton Content="25 cm" Value="25 cm" CheckedChanged="onOptionChanged"/>
+            <RadioButton Content="32 cm" Value="32 cm" CheckedChanged="onOptionChanged"/>
+            <RadioButton Content="45 cm" Value="45 cm" CheckedChanged="onOptionChanged"/>
+        </VerticalStackLayout>
+        <VerticalStackLayout RadioButtonGroup.GroupName="ciasto">
+            <RadioButton Content="cienkie" Value="cienka"/>
+            <RadioButton Content="grube" Value="gruba"/>
+            <RadioButton Content="Z serem w brzegu (+ 5zł)" Value="5" x:Name="withCheese" CheckedChanged="onOptionChanged"/>
+        </VerticalStackLayout>
+        <VerticalStackLayout>
+            <Stepper x:Name="quantityStepper"
+                     Minimum="1"
+                     Maximum="10"
+                     Increment="1"
+                     Value="1"
+                     ValueChanged="onOptionChanged"/>
+            <Label x:Name="quantityLabel"
+                   Text="{Binding Source={x:Reference quantityStepper}, Path=Value}"/>
+        </VerticalStackLayout>
+        <VerticalStackLayout>
+            <TimePicker x:Name="MyTimePicker"
+               Format="HH:mm"/>
+        </VerticalStackLayout>
+        <VerticalStackLayout>
+            <Label
+                   Text="{Binding selectedPizza, StringFormat='Wybrano rozmiar: {0}'}"
+                   FontSize="18"/>
+            <Label
+                x:Name="resultLabel">
+                
+            </Label>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
