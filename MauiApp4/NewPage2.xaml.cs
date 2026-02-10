@@ -5,6 +5,7 @@ namespace MauiApp4;
 
 public partial class NewPage2 : ContentPage
 {
+    int totalPrice;
 	public NewPage2()
 	{
 		InitializeComponent();
@@ -34,7 +35,7 @@ public partial class NewPage2 : ContentPage
 	{
 		if(!string.IsNullOrEmpty(nameSurnameEntry.Text) && !string.IsNullOrEmpty(emailEntry.Text) && itemPicker.SelectedIndex >= 0)
 		{ 
-			DisplayAlert("Rejestracja", $"Zarejestrowano: {nameSurnameEntry.Text} ({emailEntry.Text}) na {itemPicker.SelectedItem.ToString()}", "OK");
+			DisplayAlert("Rejestracja", $"Zarejestrowano: {nameSurnameEntry.Text} {emailEntry.Text} na {itemPicker.SelectedItem.ToString()} ³¹czna cena to {totalPrice}", "OK");
 		}else
 		{
             DisplayAlert("Rejestracja nieudana ", $"Proszê o wype³nienie ka¿dego pola", "OK");
@@ -56,7 +57,7 @@ public partial class NewPage2 : ContentPage
                 basePrice = 500;
                 break;
         }
-        int totalPrice= basePrice + (pricePerAdittionalPerson * numberOfAdditionalPeople);
+         totalPrice= basePrice + (pricePerAdittionalPerson * numberOfAdditionalPeople);
 
         resultLabel.Text = $"Cena ca³kowita: {totalPrice} z³";
 
