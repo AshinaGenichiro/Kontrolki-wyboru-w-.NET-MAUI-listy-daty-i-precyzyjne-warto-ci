@@ -35,7 +35,7 @@ public partial class NewPage2 : ContentPage
 	{
 		if(!string.IsNullOrEmpty(nameSurnameEntry.Text) && !string.IsNullOrEmpty(emailEntry.Text) && itemPicker.SelectedIndex >= 0)
 		{ 
-			DisplayAlert("Rejestracja", $"Zarejestrowano: {nameSurnameEntry.Text} {emailEntry.Text} na {itemPicker.SelectedItem.ToString()} ³¹czna cena to {totalPrice}", "OK");
+			DisplayAlert("Rejestracja", $"Zarejestrowano: {nameSurnameEntry.Text} {emailEntry.Text} na {itemPicker.SelectedItem.ToString()} ³¹czna cena to {totalPrice} z³", "OK");
 		}else
 		{
             DisplayAlert("Rejestracja nieudana ", $"Proszê o wype³nienie ka¿dego pola", "OK");
