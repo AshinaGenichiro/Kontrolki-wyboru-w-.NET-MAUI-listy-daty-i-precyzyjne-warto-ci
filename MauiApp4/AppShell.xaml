@@ -6,19 +6,19 @@
     xmlns:local="clr-namespace:MauiApp4"
     Title="MauiApp4">
     <TabBar>
-        <Tab Title="Zadanie 19.3">
+        <Tab Title="Zadanie 19.2">
            <ShellContent
               Title="Home"
               ContentTemplate="{DataTemplate local:MainPage}"
               Route="MainPage"/>
         </Tab>
-        <Tab Title="Zadanie 19.4">
+        <Tab Title="Zadanie 19.3">
             <ShellContent
               Title="Home"
               ContentTemplate="{DataTemplate local:NewPage1}"
               Route="NewPage1"/>
         </Tab>
-        <Tab Title="Zadanie 19.5">
+        <Tab Title="Zadanie 19.4">
             <ShellContent
               Title="Home"
               ContentTemplate="{DataTemplate local:NewPage2}"
